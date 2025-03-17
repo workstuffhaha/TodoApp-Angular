@@ -1,0 +1,27 @@
+<!-- you can render the todos over here-->
+<!-- <p>{{todoItems()[0].title}}</p> -->
+<!--todoItems is equal to an array over here-->
+
+<!-- what if you want to loop over the entire list, for that you will use FOR loops -->
+<h3>Todos list</h3>
+
+@if (!todoItems().length) {
+   <p>loading...</p>
+}
+
+<form>
+  <label>filter todos</label>
+  <input 
+  name="searchTerm" 
+  [(ngModel)]="searchTerm"
+  placeholder="search todos..." 
+  />
+</form>
+
+<ul class="todos">
+   @for (todo of todoItems() |filterTodos : searchTerm(); track todo.id) {
+      <app-todos-items (todoToggled)="updateTodoItem($event)" [todo]="todo" />
+      
+    }   
+</ul>
+ 

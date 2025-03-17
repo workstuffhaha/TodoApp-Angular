@@ -1,0 +1,32 @@
+header{
+    display : felx;
+    padding-inline:16px;
+    padding-block : 8px;
+    background-color:black;
+    color : white;
+    align-items: center;
+    justify-content: space-between;
+}
+nav{
+    display : flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    > span{
+        cursor:pointer;
+        &:hover{
+            color:gray;
+        }
+    }
+
+    ul{
+        list-style-type: disc;
+
+        li{
+            cursor: pointer;
+            &:hover{
+                color: gray;
+            }
+        }
+    }
+}
